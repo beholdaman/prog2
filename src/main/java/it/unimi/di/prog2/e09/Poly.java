@@ -117,7 +117,24 @@ public class Poly { // we don't extend Cloneable, see EJ 3.13
    * @throws NullPointerException if {@code q} is {@code null}.
    */
   public Poly add(Poly q) throws NullPointerException {
-    return null; // add missing implementation
+      if(q==null) throw new NullPointerException("parameter is null");
+
+      Poly res;
+
+      if(q.deg>this.deg) res = new Poly(q.deg);
+      else res = new Poly(this.deg);
+
+
+      for(int i =0; i<=q.deg; i++) {
+          res.terms[i] = q.terms[i];
+      }
+      for(int i=0; i<=this.deg; i++) {
+          res.terms[i] += this.terms[i];
+      }
+
+      return res;
+
+
   }
 
   /**
