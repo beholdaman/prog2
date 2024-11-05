@@ -128,7 +128,6 @@ public class SparsePoly {
 
     return res.sumSameCoeff();
 
-    
   }
 
   /**
@@ -149,7 +148,7 @@ public class SparsePoly {
 
     for(Term t1: this.terms) {
       for(Term t2: q.terms) {
-        res.terms.add(new Term(t1.degree+t2.degree, t1.coeff*t2.coeff));
+        res.terms.add(new Term(t1.coeff*t2.coeff, t1.degree+t2.degree));
       }
     }
 
