@@ -55,7 +55,8 @@ public class SparsePoly {
 
   /** Initializes this to be the zero polynomial, that is \( p = 0 \). */
   public SparsePoly() {
-    terms = null; // replace this with the actual implementation
+    Term t = new Term(0,0);
+    terms = new LinkedList<Term>().add(t);
   }
 
   /**
@@ -66,7 +67,8 @@ public class SparsePoly {
    * @throws NegativeExponentException if {@code n} &lt; 0.
    */
   public SparsePoly(int c, int n) throws NegativeExponentException {
-    terms = null; // replace this with the actual implementation
+    Term t = new Term(c,n);
+    terms = new LinkedList<Term>().add(t);
   }
 
   /**
