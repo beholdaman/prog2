@@ -118,15 +118,15 @@ public class SparsePoly {
     if(q.degree>this.degree) res.degree = q.degree;
     else res.degree = this.degree;
 
-    for(Term t1: q.terms) {
-      for(Term t2: this.terms) {
-        if(t2.degree==t1.degree) {
-          res.terms.add(new Term(t1.degree, t1.coeff+t2.coeff));
-        }
-      }
+    for(Term t: q.terms) {
+      res.terms.add(t);
     }
 
-    return res;
+    for(Term t: this.terms) {
+      res.terms.add(t);
+    }
+
+    return res.sumSameCoeff();
 
     
   }
