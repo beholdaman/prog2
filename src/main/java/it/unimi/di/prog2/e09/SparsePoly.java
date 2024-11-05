@@ -154,7 +154,7 @@ public class SparsePoly {
       }
     }
 
-    return res;
+    return res.sumSameCoeff();
 
 
   }
