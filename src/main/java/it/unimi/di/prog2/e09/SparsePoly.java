@@ -57,7 +57,8 @@ public class SparsePoly {
 
   /** Initializes this to be the zero polynomial, that is \( p = 0 \). */
   public SparsePoly() {
-    terms = new LinkedList<Term>(); 
+    Term t = new Term(0,0);
+    terms = new LinkedList<Term>(); terms.add(t);
     degree = 0;
   }
 
@@ -166,7 +167,7 @@ public class SparsePoly {
    * @throws NullPointerException if {@code q} is {@code null}.
    */
   public SparsePoly sub(SparsePoly q) throws NullPointerException {
-    return null; // replace this with the actual implementation
+    
   }
 
   /**
