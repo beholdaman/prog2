@@ -56,6 +56,8 @@ public class SparsePoly {
   private int degree;
 
   /** Initializes this to be the zero polynomial, that is \( p = 0 \). */
+  //utile che sia popolata per il toString.
+  //l'addizione puo' gestirlo nei termini noti
   public SparsePoly() {
     Term t = new Term(0,0);
     terms = new LinkedList<Term>(); terms.add(t);
@@ -148,7 +150,7 @@ public class SparsePoly {
 
     for(Term t1: this.terms) {
       for(Term t2: q.terms) {
-        res.terms.add(new Term(t1.degree*t2.degree, t1.coeff*t2.coeff));
+        res.terms.add(new Term(t1.degree+t2.degree, t1.coeff*t2.coeff));
       }
     }
 
@@ -167,7 +169,7 @@ public class SparsePoly {
    * @throws NullPointerException if {@code q} is {@code null}.
    */
   public SparsePoly sub(SparsePoly q) throws NullPointerException {
-    
+    return this.add(q.minus());
   }
 
   /**
@@ -177,7 +179,10 @@ public class SparsePoly {
    *
    * @return this polynomial multiplied by \( -1 \).
    */
+   //metodo modificatore?
   public SparsePoly minus() {
-    return null; // replace this with the actual implementation
+    for(Term t: terms) {
+      t.coeff = - t.coeff;
+    }
   }
 }
