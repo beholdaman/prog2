@@ -52,11 +52,13 @@ public class SparsePoly {
 
   /** The array of terms (in increasing non-zero degree). */
   private final List<Term> terms;
+  private int degree;
 
   /** Initializes this to be the zero polynomial, that is \( p = 0 \). */
   public SparsePoly() {
     Term t = new Term(0,0);
     terms = new LinkedList<Term>().add(t);
+    degree = 0;
   }
 
   /**
@@ -69,6 +71,8 @@ public class SparsePoly {
   public SparsePoly(int c, int n) throws NegativeExponentException {
     Term t = new Term(c,n);
     terms = new LinkedList<Term>().add(t);
+    degree = n;
+    
   }
 
   /**
@@ -78,7 +82,9 @@ public class SparsePoly {
    * @return the coefficient of the considered term.
    */
   public int coeff(int d) {
-    return 0; // replace this with the actual implementation
+    for(Term t: terms) {
+      if(t.degree==d) return t.coeff;
+    }
   }
 
   /**
@@ -88,7 +94,7 @@ public class SparsePoly {
    *     Poly}.
    */
   public int degree() {
-    return 0; // replace this with the actual implementation
+    return degree;
   }
 
   /**
