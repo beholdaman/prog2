@@ -59,8 +59,7 @@ public class SparsePoly {
   //utile che sia popolata per il toString.
   //l'addizione puo' gestirlo nei termini noti
   public SparsePoly() {
-    Term t = new Term(0,0);
-    terms = new LinkedList<Term>(); terms.add(t);
+    terms = new LinkedList<Term>(); 
     degree = 0;
   }
 
@@ -146,7 +145,7 @@ public class SparsePoly {
     if(q==null) throw new NullPointerException();
 
     SparsePoly res = new SparsePoly();
-    res.degree = this.degree * q.degree;
+    res.degree = this.degree + q.degree;
 
     for(Term t1: this.terms) {
       for(Term t2: q.terms) {
@@ -182,8 +181,9 @@ public class SparsePoly {
    //metodo modificatore?
   public SparsePoly minus() {
     for(Term t: terms) {
-      t.coeff = - t.coeff;
+      t = new Term(-t.coeff, t.degree);
     }
+    return this;
   }
 
   /**
@@ -193,11 +193,12 @@ public class SparsePoly {
   *
   *
    */
-  private sumSameCoeff() {
-    for(Term t1: coeff) {
-      for(Term t2: coeff) {
-        if(t1.degree==t2.degree && t1!=t2)  t1.coeff += t2.coeff;
+  private SparsePoly sumSameCoeff() {
+    for(Term t1: terms) {
+      for(Term t2: terms) {
+        if(t1.degree==t2.degree && t1!=t2)  t1 = new Term(t1.coeff+t2.coeff, t1.degree);
       }
     }
+    return this;
   }
 }

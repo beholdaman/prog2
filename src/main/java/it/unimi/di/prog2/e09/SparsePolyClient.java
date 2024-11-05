@@ -21,6 +21,8 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e09;
 
+import java.util.Scanner;
+
 /** A class to test some methods of {@link SparsePoly}. */
 public class SparsePolyClient {
 
