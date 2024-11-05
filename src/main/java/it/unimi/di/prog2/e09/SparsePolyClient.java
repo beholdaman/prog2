@@ -38,7 +38,7 @@ public class SparsePolyClient {
    * @param args not used.
    */
 
-  /*- Uncomment the main method once you have implemented the SparsePoly class
+  //- Uncomment the main method once you have implemented the SparsePoly class
 
   public static void main(String[] args) {
     SparsePoly result = new SparsePoly(1, 1).add(new SparsePoly(-1, 0));
@@ -51,5 +51,4 @@ public class SparsePolyClient {
     }
   }
 
-  */
 }

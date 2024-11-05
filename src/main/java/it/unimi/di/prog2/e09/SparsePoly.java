@@ -23,6 +23,7 @@ package it.unimi.di.prog2.e09;
 
 import it.unimi.di.prog2.h08.impl.NegativeExponentException;
 import java.util.List;
+import java.util.LinkedList;
 
 /**
  * {@code SparsePoly}s are immutable polynomials with integer coefficients such that the number of
@@ -56,8 +57,7 @@ public class SparsePoly {
 
   /** Initializes this to be the zero polynomial, that is \( p = 0 \). */
   public SparsePoly() {
-    Term t = new Term(0,0);
-    terms = new LinkedList<Term>().add(t);
+    terms = new LinkedList<Term>(); 
     degree = 0;
   }
 
@@ -70,7 +70,7 @@ public class SparsePoly {
    */
   public SparsePoly(int c, int n) throws NegativeExponentException {
     Term t = new Term(c,n);
-    terms = new LinkedList<Term>().add(t);
+    terms = new LinkedList<Term>(); terms.add(t);
     degree = n;
     
   }
@@ -81,10 +81,12 @@ public class SparsePoly {
    * @param d the exponent of the term to consider.
    * @return the coefficient of the considered term.
    */
+   //se il grado d non esiste nel polinomio significa che il suo coefficiente e' 0
   public int coeff(int d) {
     for(Term t: terms) {
       if(t.degree==d) return t.coeff;
     }
+    return 0;
   }
 
   /**
@@ -107,7 +109,24 @@ public class SparsePoly {
    * @throws NullPointerException if {@code q} is {@code null}.
    */
   public SparsePoly add(SparsePoly q) throws NullPointerException {
-    return null; // replace this with the actual implementation
+
+    if(q==null) throw new NullPointerException();
+
+    SparsePoly res = new SparsePoly();
+    if(q.degree>this.degree) res.degree = q.degree;
+    else res.degree = this.degree;
+
+    for(Term t1: q.terms) {
+      for(Term t2: this.terms) {
+        if(t2.degree==t1.degree) {
+          res.terms.add(new Term(t1.degree, t1.coeff+t2.coeff));
+        }
+      }
+    }
+
+    return res;
+
+    
   }
 
   /**
@@ -120,7 +139,21 @@ public class SparsePoly {
    * @throws NullPointerException if {@code q} is {@code null}.
    */
   public SparsePoly mul(SparsePoly q) throws NullPointerException {
-    return null; // replace this with the actual implementation
+
+    if(q==null) throw new NullPointerException();
+
+    SparsePoly res = new SparsePoly();
+    res.degree = this.degree * q.degree;
+
+    for(Term t1: this.terms) {
+      for(Term t2: q.terms) {
+        res.terms.add(new Term(t1.degree*t2.degree, t1.coeff*t2.coeff));
+      }
+    }
+
+    return res;
+
+
   }
 
   /**
