@@ -185,4 +185,19 @@ public class SparsePoly {
       t.coeff = - t.coeff;
     }
   }
+
+  /**
+  * Sums the terms of the polynomial which have the same coefficient 
+  *
+  * @return this polynomial with all coefficient by the same degree summed up
+  *
+  *
+   */
+  private sumSameCoeff() {
+    for(Term t1: coeff) {
+      for(Term t2: coeff) {
+        if(t1.degree==t2.degree && t1!=t2)  t1.coeff += t2.coeff;
+      }
+    }
+  }
 }
