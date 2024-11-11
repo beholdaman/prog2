@@ -103,7 +103,9 @@ public class RationalNumber {
   *
   * */
   private void simplify() {
-    return;
+    int d = mdc(numerator,denominator);
+    numerator = numerator/d;
+    denominator = denominator/d;
   }
 
   /**
