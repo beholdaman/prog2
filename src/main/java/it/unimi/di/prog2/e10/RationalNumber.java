@@ -96,6 +96,16 @@ public class RationalNumber {
      return (a*b)/mcd(a,b);
   }
 
+  /**
+  * simplifies {@code this} fraction
+  * 
+  *<p> this method modifies {@code this} object
+  *
+  * */
+  private void simplify() {
+    return;
+  }
+
 
   /**
    * Returns the sum of this rational number and another one.
@@ -117,7 +127,8 @@ public class RationalNumber {
    * @return the product of this rational number and {@code other}.
    */
   public RationalNumber mul(RationalNumber other) {
-    return null;
+    return new RationalNumber(
+      this.numerator*other.numerator, this.denominator*other.denominator);
   }
 
   /**
