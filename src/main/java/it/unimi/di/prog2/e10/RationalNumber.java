@@ -107,7 +107,7 @@ public class RationalNumber {
   * @return the opposite of {@code this}
   * */
   public RationalNumber opp() {
-    return null;
+    return new RationalNumber(-numerator, denominator);
   }
 
   /**
