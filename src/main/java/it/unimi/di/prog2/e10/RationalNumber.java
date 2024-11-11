@@ -98,14 +98,13 @@ public class RationalNumber {
   *
    */
   public RationalNumber inv() {
-    return null;
+    return new RationalNumber(denominator,numerator);
   }
 
   /**
   * Returns the opposite if this rational number, that is {@code this} multiplied by -1
   *
   * @return the opposite of {@code this}
-  *
   * */
   public RationalNumber opp() {
     return null;
