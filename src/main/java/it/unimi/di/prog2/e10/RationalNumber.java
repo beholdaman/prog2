@@ -177,7 +177,7 @@ public class RationalNumber {
   *
    */
   public RationalNumber div(RationalNumber other) {
-    return this.mul();
+    return this.mul(other.inv());
   }
 
   @Override
