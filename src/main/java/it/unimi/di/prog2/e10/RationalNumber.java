@@ -86,14 +86,14 @@ public class RationalNumber {
   }
 
   /**
-  * Given two positive intergers returns its minimum common multiplier
+  * Given two positive intergers returns its lowest common multiplier
   * that is the smallest number that is divided by both numbers exactly
   * @param a positive integer
   * @param b positive integer
-  * @return minimum common multiplier of {@code a} and {@code b}
+  * @return lowest common multiplier of {@code a} and {@code b}
   * */
   private static int mcm(int a, int b) {
-    return 0;
+     return (a*b)/mcd(a,b);
   }
 
 
