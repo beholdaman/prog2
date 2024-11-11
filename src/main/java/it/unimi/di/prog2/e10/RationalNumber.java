@@ -38,33 +38,35 @@ public class RationalNumber {
    * @param numerator the numerator.
    * @param denominator the denominator.
    */
+
+   int numerator;
+   int denominator;
+
    //How to represent 0?
    //Allow fractions like 0/n
    //How to deal with non positive denominator?
   public RationalNumber(int numerator, int denominator) {
-    if(denominator<1) throw new IllegalArgumentException("Denominator must be striclty positive");
+    if(denominator<1) throw new IllegalArgumentException("Denominator must be strictly positive");
     this.denominator = denominator;
     this.numerator = numerator;
   }
 
-   /**
+  /**
   * Returns int representation of the denominator of {@code this}
   *
   * @return int value of the denominator of {@code this}
-  *
   * */
   private int den() {
-    return 0;
+    return denominator;
   }
 
   /**
   * Returns int representation of the numerator of {@code this}
   *
   * @return int value of the numerator of {@code this}
-  *
   * */
   private int num() {
-    return 0;
+    return numerator;
   }
 
 
