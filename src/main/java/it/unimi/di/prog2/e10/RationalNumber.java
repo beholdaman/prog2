@@ -60,6 +60,12 @@ public class RationalNumber {
     return 0;
   }
 
+  /**
+  * Returns int representation of the numerator of {@code this}
+  *
+  * @return int value of the numerator of {@code this}
+  *
+  * */
   private int num() {
     return 0;
   }
@@ -114,5 +120,20 @@ public class RationalNumber {
    */
   public RationalNumber div(RationalNumber other) {
     return null;
+  }
+
+  @Override
+  public String toString() {
+    return null;
+  }
+
+  @Override
+  public boolean equals(RationalNumber other) {
+    return false;
+  }
+
+  @Override 
+  public int hashCode() {
+    return 0;
   }
 }

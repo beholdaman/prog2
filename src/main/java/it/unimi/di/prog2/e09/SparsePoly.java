@@ -111,20 +111,12 @@ public class SparsePoly {
    * @throws NullPointerException if {@code q} is {@code null}.
    */
   public SparsePoly add(SparsePoly q) throws NullPointerException {
-
-    if(q==null) throw new NullPointerException();
-
     SparsePoly res = new SparsePoly();
     if(q.degree>this.degree) res.degree = q.degree;
     else res.degree = this.degree;
 
-    for(Term t: q.terms) {
-      res.terms.add(t);
-    }
-
-    for(Term t: this.terms) {
-      res.terms.add(t);
-    }
+    res.terms.addAll(this.terms);
+    res.terms.addAll(q.terms);
 
     return res.sumSameCoeff();
 
@@ -188,16 +180,25 @@ public class SparsePoly {
   /**
   * Sums the terms of the polynomial which have the same coefficient 
   *
-  * @return this polynomial with all coefficient by the same degree summed up
+  * @return a new polynomial with all coefficient by the same degree summed up
   *
   *
    */
-  private SparsePoly sumSameCoeff() {
-    for(Term t1: terms) {
-      for(Term t2: terms) {
-        if(t1.degree==t2.degree && t1!=t2)  t1 = new Term(t1.coeff+t2.coeff, t1.degree);
+  public SparsePoly sumSameCoeff() {
+    SparsePoly res = new SparsePoly();
+    for(int i=0; i<terms.size(); i++) {
+      Term t1 = terms.get(i);
+      for(int j=i; j<terms.size(); j++) {
+        Term t2 = terms.get(j);
+        if(terms.get(i).degree==terms.get(j).degree) {
+          res.terms.add(new Term(t1.coeff+t2.coeff, t1.degree));
+        }else{
+          res.terms.add(t1);
+          res.terms.add(t2);
+        }
       }
+    
     }
-    return this;
+    return res;
   }
 }

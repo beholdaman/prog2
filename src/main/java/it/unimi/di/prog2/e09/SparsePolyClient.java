@@ -42,15 +42,20 @@ public class SparsePolyClient {
 
   //- Uncomment the main method once you have implemented the SparsePoly class
 
+ 
+
   public static void main(String[] args) {
     SparsePoly result = new SparsePoly(1, 1).add(new SparsePoly(-1, 0));
     try (Scanner s = new Scanner(System.in)) {
       while (s.hasNextInt()) {
         SparsePoly term = new SparsePoly(s.nextInt(), s.nextInt());
-        result = result.mul(term);
+        result = result.add(term);
       }
       for (int d = 0; d <= result.degree(); d++) System.out.println(result.coeff(d) + " " + d);
     }
   }
 
+  
 }
+
+
