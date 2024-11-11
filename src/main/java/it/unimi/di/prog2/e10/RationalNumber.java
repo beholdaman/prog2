@@ -103,7 +103,7 @@ public class RationalNumber {
   *
   * */
   private void simplify() {
-    int d = mdc(numerator,denominator);
+    int d = mcd(numerator,denominator);
     numerator = numerator/d;
     denominator = denominator/d;
   }
@@ -114,7 +114,8 @@ public class RationalNumber {
   * @return a new rational number that is {@code this} reduced
   * */
   public RationalNumber simplified() {
-    return null;
+    int d = mcd(numerator,denominator);
+    return new RationalNumber(numerator/d, denominator/d);
   }
 
   /**
