@@ -185,8 +185,9 @@ public class RationalNumber {
 
   @Override
   public String toString() {
-    String s = Integer.toString(numerator) +"/"+ Integer.toString(denominator);
-    return s;
+    if(numerator==0) return "0";
+    if(denominator==1) return Integer.toString(numerator);
+    return new String(Integer.toString(numerator) +"/"+ Integer.toString(denominator));
   }
 
   @Override
