@@ -51,12 +51,68 @@ public class RationalNumber {
   }
 
   /**
+  * Returns int representation of the denominator of {@code this}
+  *
+  * @return int value of the denominator of {@code this}
+  *
+  * */
+  private int den() {
+    return 0;
+  }
+
+  private int num() {
+    return 0;
+  }
+
+  /**
    * Returns the product of this rational number and another one.
    *
    * @param other the other rational number.
    * @return the product of this rational number and {@code other}.
    */
   public RationalNumber mul(RationalNumber other) {
+    return null;
+  }
+
+  /**
+  * Returns the inverse of this rational number, that is {@code this} elevated to -1
+  *
+  * @return the inverse of {@code this}
+  *
+   */
+  public RationalNumber inv() {
+    return null;
+  }
+
+  /**
+  * Returns the opposite if this rational number, that is {@code this} multiplied by -1
+  *
+  * @return the opposite of {@code this}
+  *
+  * */
+  public RationalNumber opp() {
+    return null;
+  }
+
+  /**
+  * Returns the rational number resulting from the subtraction of {@code other} from {@code this}
+  *
+  * @param other rational number
+  * @return a new rational number that is the result of the subtraction of {@code other} from {@code this}
+  *
+  * */
+  public RationalNUmber suv(RationalNumber other) {
+    return null;
+  }
+
+  /**
+  * Returns the rational number resulting from the division of {@code this} by {@code other}
+  *
+  * @param other rational number
+  * @return a new rational that is the result of dividing {@code this} by {@code other}
+  *
+   */
+  public RationalNumber div(RationalNumber other) {
     return null;
   }
 }
