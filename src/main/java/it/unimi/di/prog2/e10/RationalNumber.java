@@ -92,7 +92,7 @@ public class RationalNumber {
   * @param b positive integer
   * @return lowest common multiplier of {@code a} and {@code b}
   * */
-  private static int mcm(int a, int b) {
+  public static int mcm(int a, int b) {
      return (a*b)/mcd(a,b);
   }
 
@@ -127,7 +127,7 @@ public class RationalNumber {
   public RationalNumber add(RationalNumber other) {
       int den = mcm(denominator, other.denominator);
       return new RationalNumber( 
-        (den/this.denominator)*this.numerator + (den/other.denominator)*other.denominator, den).simplified();
+        ((den/this.denominator)*this.numerator) + ((den/other.denominator)*other.numerator), den).simplified();
   }
 
  
