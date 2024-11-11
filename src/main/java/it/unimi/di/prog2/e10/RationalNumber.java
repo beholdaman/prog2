@@ -187,9 +187,11 @@ public class RationalNumber {
 
   @Override
   public boolean equals(RationalNumber other) {
-    return false;
+    this.simplify(); other.simplify();
+    return this.numerator == other.numerator && this.denominator == other.denominator;
+      
   }
-
+ 
   @Override 
   public int hashCode() {
     return 0;
