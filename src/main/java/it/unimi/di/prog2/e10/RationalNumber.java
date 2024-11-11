@@ -104,7 +104,9 @@ public class RationalNumber {
    * @return the sum of this rational number and {@code other}.
    */
   public RationalNumber add(RationalNumber other) {
-    return null;
+      int den = mcm(denominator, other.denominator);
+      return new RationalNumber( 
+        (den/this.denominator)*this.numerator + (den/other.denominator)*other.denominator, den);
   }
 
  
