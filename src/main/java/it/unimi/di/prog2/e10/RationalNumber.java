@@ -46,7 +46,7 @@ public class RationalNumber {
    //Allow fractions like 0/n
    //How to deal with non positive denominator?
   public RationalNumber(int numerator, int denominator) {
-    if(denominator<1) throw new IllegalArgumentException("Denominator must be strictly positive");
+    if(denominator==0) throw new IllegalArgumentException("Denominator cannot be zero");
     this.denominator = denominator;
     this.numerator = numerator;
   }
