@@ -69,6 +69,33 @@ public class RationalNumber {
     return numerator;
   }
 
+ /**
+  * Given two positive intergers returns its maximum common divisor
+  * that is the greatest number that divides both numbers exactly
+  * @param a positive integer
+  * @param b positive integer
+  * @return maximum common divisor of {@code a} and {@code b}
+  * */
+  private static int mdc(int a, int b) {
+    while(b!=0) {
+      int x = b;
+      b = a%b;
+      a = x;
+    }
+    return a;
+  }
+
+  /**
+  * Given two positive intergers returns its minimum common multiplier
+  * that is the smallest number that is divided by both numbers exactly
+  * @param a positive integer
+  * @param b positive integer
+  * @return minimum common multiplier of {@code a} and {@code b}
+  * */
+  private static int mcm(int a, int b) {
+    return 0;
+  }
+
 
   /**
    * Returns the sum of this rational number and another one.
@@ -117,7 +144,7 @@ public class RationalNumber {
   * @return a new rational number that is the result of the subtraction of {@code other} from {@code this}
   *
   * */
-  public RationalNUmber suv(RationalNumber other) {
+  public RationalNUmber sub(RationalNumber other) {
     return null;
   }
 
