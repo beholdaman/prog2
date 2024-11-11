@@ -106,6 +106,14 @@ public class RationalNumber {
     return;
   }
 
+  /**
+  * returns a new rational number that is {@code this} simplified
+  *
+  * @return a new rational number that is {@code this} simplified
+  * */
+  public RationalNumber simplified() {
+    return null;
+  }
 
   /**
    * Returns the sum of this rational number and another one.
