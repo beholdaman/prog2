@@ -166,7 +166,7 @@ public class RationalNumber {
   *
   * */
   public RationalNumber sub(RationalNumber other) {
-    return this.add(other.inv());
+    return this.add(other.opp());
   }
 
   /**
@@ -177,7 +177,7 @@ public class RationalNumber {
   *
    */
   public RationalNumber div(RationalNumber other) {
-    return null;
+    return this.mul();
   }
 
   @Override
