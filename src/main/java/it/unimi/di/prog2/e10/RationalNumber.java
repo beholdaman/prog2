@@ -56,7 +56,7 @@ public class RationalNumber {
   *
   * @return int value of the denominator of {@code this}
   * */
-  private int den() {
+  public int den() {
     return denominator;
   }
 
@@ -65,7 +65,7 @@ public class RationalNumber {
   *
   * @return int value of the numerator of {@code this}
   * */
-  private int num() {
+  public int num() {
     return numerator;
   }
 
