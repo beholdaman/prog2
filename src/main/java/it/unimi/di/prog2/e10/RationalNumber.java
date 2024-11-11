@@ -76,7 +76,7 @@ public class RationalNumber {
   * @param b positive integer
   * @return maximum common divisor of {@code a} and {@code b}
   * */
-  private static int mdc(int a, int b) {
+  private static int mcd(int a, int b) {
     while(b!=0) {
       int x = b;
       b = a%b;
@@ -127,7 +127,7 @@ public class RationalNumber {
   public RationalNumber add(RationalNumber other) {
       int den = mcm(denominator, other.denominator);
       return new RationalNumber( 
-        (den/this.denominator)*this.numerator + (den/other.denominator)*other.denominator, den);
+        (den/this.denominator)*this.numerator + (den/other.denominator)*other.denominator, den).simplify();
   }
 
  
@@ -139,7 +139,7 @@ public class RationalNumber {
    */
   public RationalNumber mul(RationalNumber other) {
     return new RationalNumber(
-      this.numerator*other.numerator, this.denominator*other.denominator);
+      this.numerator*other.numerator, this.denominator*other.denominator).simplify();
   }
 
   /**
@@ -169,7 +169,7 @@ public class RationalNumber {
   *
   * */
   public RationalNumber sub(RationalNumber other) {
-    return this.add(other.opp());
+    return this.add(other.opp()).simplify();
   }
 
   /**
@@ -180,7 +180,7 @@ public class RationalNumber {
   *
    */
   public RationalNumber div(RationalNumber other) {
-    return this.mul(other.inv());
+    return this.mul(other.inv()).simplify();
   }
 
   @Override
@@ -190,7 +190,8 @@ public class RationalNumber {
   }
 
   @Override
-  public boolean equals(RationalNumber other) {
+  public boolean equals(Object obj) {
+    if( !(obj instanceof RationalNumber other)) return false;
     this.simplify(); other.simplify();
     return this.numerator == other.numerator && this.denominator == other.denominator;
       
