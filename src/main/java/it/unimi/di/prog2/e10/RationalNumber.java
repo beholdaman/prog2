@@ -127,7 +127,7 @@ public class RationalNumber {
   public RationalNumber add(RationalNumber other) {
       int den = mcm(denominator, other.denominator);
       return new RationalNumber( 
-        (den/this.denominator)*this.numerator + (den/other.denominator)*other.denominator, den).simplify();
+        (den/this.denominator)*this.numerator + (den/other.denominator)*other.denominator, den).simplified();
   }
 
  
@@ -139,7 +139,7 @@ public class RationalNumber {
    */
   public RationalNumber mul(RationalNumber other) {
     return new RationalNumber(
-      this.numerator*other.numerator, this.denominator*other.denominator).simplify();
+      this.numerator*other.numerator, this.denominator*other.denominator).simplified();
   }
 
   /**
@@ -169,7 +169,7 @@ public class RationalNumber {
   *
   * */
   public RationalNumber sub(RationalNumber other) {
-    return this.add(other.opp()).simplify();
+    return this.add(other.opp()).simplified();
   }
 
   /**
@@ -180,7 +180,7 @@ public class RationalNumber {
   *
    */
   public RationalNumber div(RationalNumber other) {
-    return this.mul(other.inv()).simplify();
+    return this.mul(other.inv()).simplified();
   }
 
   @Override
