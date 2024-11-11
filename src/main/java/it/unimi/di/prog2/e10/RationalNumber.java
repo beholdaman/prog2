@@ -42,22 +42,12 @@ public class RationalNumber {
    //Allow fractions like 0/n
    //How to deal with non positive denominator?
   public RationalNumber(int numerator, int denominator) {
-    this.denominator = 1;
-    if(denominator>0) this.denominator = denominator;
+    if(denominator<1) throw new IllegalArgumentException("Denominator must be striclty positive");
+    this.denominator = denominator;
     this.numerator = numerator;
   }
 
-  /**
-   * Returns the sum of this rational number and another one.
-   *
-   * @param other the other rational number.
-   * @return the sum of this rational number and {@code other}.
-   */
-  public RationalNumber add(RationalNumber other) {
-    return null;
-  }
-
-  /**
+   /**
   * Returns int representation of the denominator of {@code this}
   *
   * @return int value of the denominator of {@code this}
@@ -77,6 +67,18 @@ public class RationalNumber {
     return 0;
   }
 
+
+  /**
+   * Returns the sum of this rational number and another one.
+   *
+   * @param other the other rational number.
+   * @return the sum of this rational number and {@code other}.
+   */
+  public RationalNumber add(RationalNumber other) {
+    return null;
+  }
+
+ 
   /**
    * Returns the product of this rational number and another one.
    *
