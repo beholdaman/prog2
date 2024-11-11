@@ -38,7 +38,14 @@ public class RationalNumber {
    * @param numerator the numerator.
    * @param denominator the denominator.
    */
-  public RationalNumber(int numerator, int denominator) {}
+   //How to represent 0?
+   //Allow fractions like 0/n
+   //How to deal with non positive denominator?
+  public RationalNumber(int numerator, int denominator) {
+    this.denominator = 1;
+    if(denominator>0) this.denominator = denominator;
+    this.numerator = numerator;
+  }
 
   /**
    * Returns the sum of this rational number and another one.
