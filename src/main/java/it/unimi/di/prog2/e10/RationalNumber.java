@@ -97,7 +97,7 @@ public class RationalNumber {
   }
 
   /**
-  * simplifies {@code this} fraction
+  * reduces {@code this} fraction
   * 
   *<p> this method modifies {@code this} object
   *
@@ -107,9 +107,9 @@ public class RationalNumber {
   }
 
   /**
-  * returns a new rational number that is {@code this} simplified
+  * returns a new rational number that is {@code this} reduced
   *
-  * @return a new rational number that is {@code this} simplified
+  * @return a new rational number that is {@code this} reduced
   * */
   public RationalNumber simplified() {
     return null;
@@ -165,8 +165,8 @@ public class RationalNumber {
   * @return a new rational number that is the result of the subtraction of {@code other} from {@code this}
   *
   * */
-  public RationalNUmber sub(RationalNumber other) {
-    return null;
+  public RationalNumber sub(RationalNumber other) {
+    return this.add(other.inv());
   }
 
   /**
