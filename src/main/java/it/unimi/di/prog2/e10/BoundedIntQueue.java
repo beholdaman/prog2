@@ -44,10 +44,13 @@ public class BoundedIntQueue {
   int i;
   int f;
 
+  //i=f means queue is empty
+  //i=f-1 means queue is full
+  
   /*-
   *
   * RI: i and f cannot be greater than cap-1
-  *
+  *     cap must 1 or greater
   *
   * AF: the elements of the queue are the elements in the buffer
   *     the first element to be insereted is at i, the last is at f
