@@ -51,6 +51,8 @@ public class BoundedIntQueue {
   *
   * RI: i and f cannot be greater than cap-1
   *     cap must 1 or greater
+  *     size must noy be negative
+  *     size must be lower than cap -1
   *
   * AF: the elements of the queue are the elements in the buffer
   *     the first element to be insereted is at i, the last is at f
@@ -88,7 +90,7 @@ public class BoundedIntQueue {
   *
   * @return the number of elements in the queue
   *
-   */
+  */
   public int size() {
     return 0;
   }
@@ -100,7 +102,7 @@ public class BoundedIntQueue {
   *
   */
   public int capacity() {
-    return 0;
+    return cap;
   }
 
   /**
