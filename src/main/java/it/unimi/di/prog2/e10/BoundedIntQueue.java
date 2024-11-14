@@ -74,6 +74,36 @@ public class BoundedIntQueue {
   }
 
   /**
+  * Returns true if the queue is empty, false otherwise
+  *
+  * @return true if queue contains zero elements, false otherwise
+  *
+  */
+  public boolean isEmpty() {
+    return false;
+  }
+
+  /**
+  * Returns number of elements on the queue
+  *
+  * @return the number of elements in the queue
+  *
+   */
+  public int size() {
+    return 0;
+  }
+
+  /**
+  * Returns the maximum capacity of the bounded queue
+  *
+  * @return the maximum number of elements the queue can contain
+  *
+  */
+  public int capacity() {
+    return 0;
+  }
+
+  /**
    * Adds an element to the queue.
    *
    * @param x the element to add.
