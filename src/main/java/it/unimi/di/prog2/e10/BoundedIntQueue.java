@@ -120,4 +120,19 @@ public class BoundedIntQueue {
   public int dequeue() {
     return 0;
   }
+
+  @Override
+  public String toString() {
+    return null;
+  }
+
+  @Override 
+  public boolean equals(Object obj) {
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    return 0;
+  }
 }
