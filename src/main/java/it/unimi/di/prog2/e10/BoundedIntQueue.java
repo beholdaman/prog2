@@ -112,7 +112,7 @@ public class BoundedIntQueue {
    * @throws IllegalStateException if the queue is full.
    */
   public void enqueue(int x) {
-    if(i==(f-1)) throw new IllegalStateException("Queue is already full");
+    if(i==(f-1)) throw new IllegalStateException("Cannot insert in full queue");
     buffer[(f+1)%cap] = x;
     f++;
     return;
@@ -125,7 +125,9 @@ public class BoundedIntQueue {
    * @throws IllegalStateException if the queue is empty.
    */
   public int dequeue() {
-    return 0;
+    if(i==f) throw new IllegalStateException("Cannot remove from empty queue");
+    i++;
+    return buffer[i-1];
   }
 
   @Override
