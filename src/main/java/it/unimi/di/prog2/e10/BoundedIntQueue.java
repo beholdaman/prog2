@@ -132,7 +132,13 @@ public class BoundedIntQueue {
 
   @Override
   public String toString() {
-    return null;
+    StringBuilder sb = new StringBuilder();
+    sb.append("[");
+    for(int s = i; i<=f; (s+1)%cap) {
+      sb.append(Integer.toString(buffer[s]));
+      sb.append(" ");
+    }
+    return sb.append();
   }
 
   @Override 
