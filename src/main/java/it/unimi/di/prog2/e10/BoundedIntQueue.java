@@ -70,7 +70,7 @@ public class BoundedIntQueue {
   public BoundedIntQueue(int capacity) {
     if(capacity<1) throw new IllegalArgumentException("Queue capacity must be positive");
     cap = capacity;
-    buffer = int[cap];
+    buffer = new int[cap];
     i = 0;
     f = 0;
   }
@@ -112,9 +112,9 @@ public class BoundedIntQueue {
    * @throws IllegalStateException if the queue is full.
    */
   public void enqueue(int x) {
-    if(i==(f-1)) throw new IllegalStateException("Cannot insert in full queue");
+    if(f==(i-1)) throw new IllegalStateException("Cannot insert in full queue");
     buffer[(f+1)%cap] = x;
-    (f+1)%cap;
+    f=(f+1)%cap;
     return;
   }
 
@@ -126,7 +126,7 @@ public class BoundedIntQueue {
    */
   public int dequeue() {
     if(i==f) throw new IllegalStateException("Cannot remove from empty queue");
-    (i+1)%cap;
+    i=(i+1)%cap;
     return buffer[i-1];
   }
 
@@ -134,11 +134,13 @@ public class BoundedIntQueue {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("[");
-    for(int s = i; i<=f; (s+1)%cap) {
+    for(int s = i; i<=f; s=(s+1)%cap) {
       sb.append(Integer.toString(buffer[s]));
       sb.append(" ");
     }
-    return sb.append();
+    CharSequence sequence = sb.append("]");
+
+    return (String)sequence;
   }
 
   @Override 
