@@ -43,6 +43,7 @@ public class BoundedIntQueue {
   int[] buffer;
   int i;  //first full spot
   int f; //first free spot
+  int size; //number of elements
 
   //i=f means queue is empty
   //i=f-1 means queue is full
@@ -51,8 +52,9 @@ public class BoundedIntQueue {
   *
   * RI: i and f cannot be greater than cap-1
   *     cap must 1 or greater
-  *     size must noy be negative
+  *     size must not be negative
   *     size must be lower than cap -1
+  *    
   *
   * AF: the elements of the queue are the elements in the buffer
   *     the first element to be insereted is at i, the last is at f
@@ -73,6 +75,7 @@ public class BoundedIntQueue {
     buffer = new int[cap];
     i = 0;
     f = 0;
+    size = 0;
   }
 
   /**
@@ -92,7 +95,7 @@ public class BoundedIntQueue {
   *
   */
   public int size() {
-    return 0;
+    return size();
   }
 
   /**
@@ -115,6 +118,7 @@ public class BoundedIntQueue {
     if(f==(i-1)) throw new IllegalStateException("Cannot insert in full queue");
     buffer[f] = x;
     f = (f+1)%cap;
+    size++;
     return; 
   }
 
@@ -127,6 +131,7 @@ public class BoundedIntQueue {
   public int dequeue() {
     if(i==f) throw new IllegalStateException("Cannot remove from empty queue");
     i=(i+1)%cap;
+    size--;
     return buffer[i-1];
   }
 
