@@ -32,6 +32,16 @@ public class RationalNumber {
   // equals, hashCode, and toString methods); add methods that are adequate to
   // the specification.
 
+  /*-
+  *
+  * RI: denominator is not zero
+  *
+  * AF: the numerator of the fraction is this.numerator and the denominator is this.denominator
+  *    
+  *
+  *
+  */
+
   /**
    * Creates a new rational number.
    *
