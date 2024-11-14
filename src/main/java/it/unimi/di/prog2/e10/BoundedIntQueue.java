@@ -38,6 +38,23 @@ public class BoundedIntQueue {
   // Given the boundedness constraint, it is not allowed to use any Java
   // Collection Framework class. An array can be used to store the elements in a
   // circular buffer (see https://www.wikiwand.com/en/articles/Circular_buffer).
+  
+  int cap;
+  int[] buffer;
+  int i;
+  int f;
+
+  /*-
+  *
+  * RI: i and f cannot be greater than cap-1
+  *
+  *
+  * AF: the elements of the queue are the elements in the buffer
+  *     the first element to be insereted is at i, the last is at f
+  *
+  *
+  *
+  */
 
   /**
    * Creates a new bounded queue with the given capacity.
