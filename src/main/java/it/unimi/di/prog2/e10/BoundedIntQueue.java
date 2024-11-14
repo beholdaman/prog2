@@ -113,8 +113,10 @@ public class BoundedIntQueue {
    */
   public void enqueue(int x) {
     if(f==(i-1)) throw new IllegalStateException("Cannot insert in full queue");
-    if(f==i) {buffer[f] = x; return;}
-    buffer[(f+1)%cap] = x;
+    
+    if(f==i) buffer[f];
+    else buffer[(f+1)%cap] =x;
+
     f=(f+1)%cap;
     return;
   }
