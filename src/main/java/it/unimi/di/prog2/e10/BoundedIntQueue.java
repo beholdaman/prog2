@@ -41,8 +41,8 @@ public class BoundedIntQueue {
   
   int cap;
   int[] buffer;
-  int i;
-  int f;
+  int i;  //first full spot
+  int f; //first free spot
 
   //i=f means queue is empty
   //i=f-1 means queue is full
@@ -113,12 +113,9 @@ public class BoundedIntQueue {
    */
   public void enqueue(int x) {
     if(f==(i-1)) throw new IllegalStateException("Cannot insert in full queue");
-    
-    if(f==i) buffer[f];
-    else buffer[(f+1)%cap] =x;
-
-    f=(f+1)%cap;
-    return;
+    buffer[f] = x;
+    f = (f+1)%cap;
+    return; 
   }
 
   /**
@@ -137,7 +134,7 @@ public class BoundedIntQueue {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("[");
-    for(int s = i; s<=f; s=(s+1)%cap) {
+    for(int s = i; s<f; s=(s+1)%cap) {
       sb.append(Integer.toString(buffer[s]));
       sb.append(" ");
     }
