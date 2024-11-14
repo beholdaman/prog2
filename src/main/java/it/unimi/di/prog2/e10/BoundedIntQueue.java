@@ -95,7 +95,7 @@ public class BoundedIntQueue {
   *
   */
   public int size() {
-    return size();
+    return size;
   }
 
   /**
@@ -139,7 +139,7 @@ public class BoundedIntQueue {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("[");
-    for(int s = i; s<this.size(); s=(s+1)%cap) {
+    for(int s = i; s<this.size; s=(s+1)%cap) {
       sb.append(Integer.toString(buffer[s]));
       sb.append(" ");
     }
