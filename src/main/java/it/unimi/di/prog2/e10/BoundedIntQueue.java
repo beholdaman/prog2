@@ -46,7 +46,7 @@ public class BoundedIntQueue {
 
   //i=f means queue is empty
   //i=f-1 means queue is full
-  
+
   /*-
   *
   * RI: i and f cannot be greater than cap-1
@@ -65,7 +65,13 @@ public class BoundedIntQueue {
    * @param capacity the capacity of the queue.
    * @throws IllegalArgumentException if {@code capacity} is negative.
    */
-  public BoundedIntQueue(int capacity) {}
+  public BoundedIntQueue(int capacity) {
+    if(capacity<1) throw new IllegalArgumentException("Queue capacity must be positive");
+    cap = capacity;
+    buffer = int[cap];
+    i = 0;
+    f = 0;
+  }
 
   /**
    * Adds an element to the queue.
