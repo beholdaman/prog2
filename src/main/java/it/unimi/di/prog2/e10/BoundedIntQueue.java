@@ -111,7 +111,12 @@ public class BoundedIntQueue {
    * @param x the element to add.
    * @throws IllegalStateException if the queue is full.
    */
-  public void enqueue(int x) {}
+  public void enqueue(int x) {
+    if(i==(f-1)) throw new IllegalStateException("Queue is already full");
+    buffer[(f+1)%cap] = x;
+    f++;
+    return;
+  }
 
   /**
    * Removes the element at the head of the queue.
