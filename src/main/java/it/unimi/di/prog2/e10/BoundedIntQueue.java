@@ -113,6 +113,7 @@ public class BoundedIntQueue {
    */
   public void enqueue(int x) {
     if(f==(i-1)) throw new IllegalStateException("Cannot insert in full queue");
+    if(f==i) {buffer[f] = x; return;}
     buffer[(f+1)%cap] = x;
     f=(f+1)%cap;
     return;
@@ -134,13 +135,13 @@ public class BoundedIntQueue {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("[");
-    for(int s = i; i<=f; s=(s+1)%cap) {
+    for(int s = i; s<=f; s=(s+1)%cap) {
       sb.append(Integer.toString(buffer[s]));
       sb.append(" ");
     }
-    CharSequence sequence = sb.append("]");
-
-    return (String)sequence;
+    sb.append("]");
+    
+    return sb.toString();
   }
 
   @Override 

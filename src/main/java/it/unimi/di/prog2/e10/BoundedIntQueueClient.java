@@ -46,6 +46,7 @@ public class BoundedIntQueueClient {
         int x = s.nextInt();
         if (x > 0) queue.enqueue(x);
         else System.out.println(queue.dequeue());
+        System.out.println(queue);
       }
     }
     System.out.println(queue);
