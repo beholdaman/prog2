@@ -80,7 +80,7 @@ public class BoundedIntQueue {
   *
   */
   public boolean isEmpty() {
-    return false;
+    return i==f;
   }
 
   /**
