@@ -21,6 +21,8 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e12;
 
+import java.lang.NullPointerException;
+import java.lang.IllegalArgumentException;
 import java.util.NoSuchElementException;
 import java.util.ArrayList;
 
@@ -130,7 +132,7 @@ public class StringToIntMap {
         if(r.key.equals(key)) return r.value;
       }    
       throw new NoSuchElementException("La chiave data non e' presente nella mappa");
-      return -1;
+      
   }
 
   /**
@@ -142,8 +144,8 @@ public class StringToIntMap {
    * @throws NullPointerException if the key is {@code null}.
    */
   public void put(String key, int value) {
-    if(key==null) throw NullPointerException("La chiave non puo' essere nullla");
-    if(containsKey(key)) throw IllegalArgumentException("Chiave e' gia' presente nella mappa");
+    if(key==null) throw new NullPointerException("La chiave non puo' essere nullla");
+    if(containsKey(key)) throw new IllegalArgumentException("Chiave e' gia' presente nella mappa");
 
     Record r = new Record(key,value);
     mappings.add(r);
@@ -161,6 +163,7 @@ public class StringToIntMap {
       if(r.key.equals(key)) {
         mappings.remove(r);
         return true;
+      }
     }
     return false;
   }

@@ -21,6 +21,7 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e12;
 
+import java.util.Scanner;
 /** A class to exercise some methods of {@link StringToIntMap}. */
 public class StringToIntMapClient {
 
