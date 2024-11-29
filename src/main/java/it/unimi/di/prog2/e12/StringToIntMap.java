@@ -150,5 +150,7 @@ public class StringToIntMap {
   }
 
   /** Removes all of the mappings from this map. */
-  public void clear() {}
+  public void clear() {
+    mappings.clear();
+  }
 }
