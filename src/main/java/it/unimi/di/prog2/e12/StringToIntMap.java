@@ -22,6 +22,7 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 package it.unimi.di.prog2.e12;
 
 import java.util.NoSuchElementException;
+import java.util.ArrayList;
 
 /**
  * A map from {@link String} to {@link Integer}.
@@ -45,13 +46,16 @@ public class StringToIntMap {
   private record Record(String key, int value) {
 
       public Record {
-
+        if(key==null) throw new NullPointerException("La chiave non puo' essere nulla");
       }
   }
 
-  private final ArrayList<> mappings;
+  private final ArrayList<Record> mappings;
+
   /** Creates a new empty map. */
-  public StringToIntMap() {}
+  public StringToIntMap() {
+    mappings = new ArrayList<Record>();
+  }
 
   /**
    * Returns the size of this map.
