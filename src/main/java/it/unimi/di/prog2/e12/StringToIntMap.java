@@ -132,7 +132,7 @@ public class StringToIntMap {
         if(r.key.equals(key)) return r.value;
       }    
       throw new NoSuchElementException("La chiave data non e' presente nella mappa");
-      
+
   }
 
   /**
@@ -178,9 +178,8 @@ public class StringToIntMap {
     StringBuilder sb = new StringBuilder();
     sb.append("[");
     for(Record r: mappings) {
-      sb.append(r.toString()+" ");
+      sb.append(r.toString()+",");
     }
-    sb.append("]");
-    return sb.toString();
+    return sb.toString()+"]";
   }
 }

@@ -135,8 +135,8 @@ public class BoundedIntQueue {
     return buffer[i-1];
   }
 
-  @Override
-  public String toString() {
+  //@Override
+  /*public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("[");
     for(int s = i; ; s=(s+1)%cap) {
@@ -146,7 +146,7 @@ public class BoundedIntQueue {
     sb.append("]");
     
     return sb.toString();
-  }
+  }*/
 
   @Override 
   public boolean equals(Object obj) {
