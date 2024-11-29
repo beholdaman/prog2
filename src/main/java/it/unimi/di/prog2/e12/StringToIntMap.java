@@ -72,7 +72,7 @@ public class StringToIntMap {
    * @return {@code true} iff this map contains no key-value mappings.
    */
   public boolean isEmpty() {
-    return false;
+    return mappings.isEmpty();
   }
 
   /**
