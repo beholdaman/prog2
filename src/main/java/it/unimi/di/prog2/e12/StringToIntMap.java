@@ -141,6 +141,11 @@ public class StringToIntMap {
    *     modified by this operation.
    */
   public boolean remove(String key) {
+    for(Record r: mappings) {
+      if(r.key.equals(key)) {
+        mappings.remove(r);
+        return true;
+    }
     return false;
   }
 
