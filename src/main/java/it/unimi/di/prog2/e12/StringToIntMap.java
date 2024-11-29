@@ -110,7 +110,11 @@ public class StringToIntMap {
    *     {@code null}.
    */
   public int get(String key) throws NoSuchElementException {
-    return 0;
+      for(Record r: mappings) {
+        if(r.key.equals(key)) return r.value;
+      }    
+      throw new NoSuchElementException("La chiave data non e' presente nella mappa");
+      return -1;
   }
 
   /**
