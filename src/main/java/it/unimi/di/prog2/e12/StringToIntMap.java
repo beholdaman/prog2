@@ -63,7 +63,7 @@ public class StringToIntMap {
    * @return the number of key-value mappings in this map.
    */
   public int size() {
-    return 0;
+    return mappings.size();
   }
 
   /**
