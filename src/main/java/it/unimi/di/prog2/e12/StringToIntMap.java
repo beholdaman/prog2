@@ -52,6 +52,17 @@ public class StringToIntMap {
 
   private final ArrayList<Record> mappings;
 
+  /*
+  * AF: la lista di coppie {chiave,valore} rappresenta le mappature chiave -> valore
+  * 
+  *
+  * RI: la lista delle mappature e' non nulla 
+  *     la lista delle mappature non contiene null
+  *     le singole mappature non contengono chiavi null
+  *     la lista delle mappature non contiene duplicati
+  *     la lista delle mappature non contiene chiavi duplicate
+  */
+
   /** Creates a new empty map. */
   public StringToIntMap() {
     mappings = new ArrayList<Record>();
