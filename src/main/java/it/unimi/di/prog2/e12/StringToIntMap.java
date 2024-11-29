@@ -125,7 +125,13 @@ public class StringToIntMap {
    * @throws IllegalArgumentException if the map already contain a mapping for the key.
    * @throws NullPointerException if the key is {@code null}.
    */
-  public void put(String key, int value) {}
+  public void put(String key, int value) {
+    if(key==null) throw NullPointerException("La chiave non puo' essere nullla");
+    if(containsKey(key)) throw IllegalArgumentException("Chiave e' gia' presente nella mappa");
+
+    Record r = new Record(key,value);
+    mappings.add(r);
+  }
 
   /**
    * Removes the mapping for a key from this map if it is present.
