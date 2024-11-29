@@ -48,6 +48,11 @@ public class StringToIntMap {
       public Record {
         if(key==null) throw new NullPointerException("La chiave non puo' essere nulla");
       }
+
+      @Override
+      public String toString() {
+        return new String(key+"->"+value);
+      }
   }
 
   private final ArrayList<Record> mappings;
