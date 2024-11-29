@@ -82,6 +82,9 @@ public class StringToIntMap {
    * @return {@code true} iff this map contains a key-value mappings with the given {@code key}.
    */
   public boolean containsKey(String key) {
+    for(Record r: mappings) {
+      if(r.key.equals(key)) return true;
+    }
     return false;
   }
 
