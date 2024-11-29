@@ -164,4 +164,15 @@ public class StringToIntMap {
   public void clear() {
     mappings.clear();
   }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("[");
+    for(Record r: mappings) {
+      sb.append(r.toString()+" ");
+    }
+    sb.append("]");
+    return sb.toString();
+  }
 }

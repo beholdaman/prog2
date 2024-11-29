@@ -47,7 +47,7 @@ public class StringToIntMapClient {
    * @param args not used.
    */
 
-  /*- Uncomment the following code once you have implemented the StringToIntMap class.
+  //- Uncomment the following code once you have implemented the StringToIntMap class.
 
   public static void main(String[] args) {
     StringToIntMap map = new StringToIntMap();
@@ -86,5 +86,5 @@ public class StringToIntMapClient {
     }
   }
 
-  */
+
 }
