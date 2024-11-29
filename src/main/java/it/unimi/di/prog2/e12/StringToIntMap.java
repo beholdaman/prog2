@@ -35,6 +35,21 @@ public class StringToIntMap {
   // EXERCISE: provide a representation, together with its AF and RI
   // Note: do not use the Map in Java Collections, the point is to implement it from scratch!
 
+  /**
+  * Un record contenente una singola mappatura da chiave e valore
+  * @param key la chiave
+  * @param value il valore
+  * @throws NullPointerException se la chiave e' null
+  *
+  */
+  private record Record(String key, int value) {
+
+      public Record {
+
+      }
+  }
+
+  private final ArrayList<> mappings;
   /** Creates a new empty map. */
   public StringToIntMap() {}
 
