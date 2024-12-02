@@ -42,6 +42,7 @@ public class StringIterators {
 
       @Override
       public boolean hasNext() {
+        if(next!=null) return true;
         while(it.hasNext()) {
           if(it.next().length()%2==0) {
             next = it.next();
@@ -53,7 +54,7 @@ public class StringIterators {
 
       @Override
       public String next() {
-        throw new UnsupportedOperationException("Unimplemented method 'next'");
+        if(next!=null) return next;
       }
     };
   }
