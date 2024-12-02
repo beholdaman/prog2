@@ -83,7 +83,6 @@ public class StringToIntMapClient {
           default:
             throw new IllegalArgumentException("Unknown command: " + command);
         }
-        //System.out.println(map.toString());
       }
     }
   }

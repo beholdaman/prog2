@@ -38,6 +38,8 @@ public class StringIterators {
   public static Iterator<String> evenIterator(final Iterator<String> it) {
     return new Iterator<>() {
 
+      private next = null;
+
       @Override
       public boolean hasNext() {
         while(it.hasNext()) {
