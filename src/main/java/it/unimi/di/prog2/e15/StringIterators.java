@@ -75,7 +75,7 @@ public class StringIterators {
 
       @Override
       public String next() {
-
+        return it.next().toUpperCase();
       }
     };
   }
