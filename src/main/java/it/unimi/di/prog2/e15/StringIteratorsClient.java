@@ -39,7 +39,7 @@ public class StringIteratorsClient {
 
   public static void main(String[] args) {
     try (Scanner s = new Scanner(System.in)) {
-      Iterator<String> it = StringIterators.evenIterator(s);
+      Iterator<String> it = StringIterators.uppercase(StringIterators.evenIterator(s));
       while (it.hasNext()) {  
         System.out.println(it.next());
       }
