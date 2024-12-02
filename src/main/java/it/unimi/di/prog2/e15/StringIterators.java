@@ -48,8 +48,8 @@ public class StringIterators {
             next = it.next();
             if(next!=null) return true;
           }
-          return false;
         }
+        return false;
       }
 
       @Override
