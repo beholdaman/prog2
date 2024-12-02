@@ -38,15 +38,14 @@ public class StringIterators {
   public static Iterator<String> evenIterator(final Iterator<String> it) {
     return new Iterator<>() {
 
-      private String next = null;
+      private String next;
 
       @Override
       public boolean hasNext() {
-        if(next!=null) return true;
         while(it.hasNext()) {
-          if(it.next().length()%2==0) {
-            next = it.next();
-            if(next!=null) return true;
+          next = it.next();
+          if(next.length()%2==0) {
+            return true;
           }
         }
         return false;
