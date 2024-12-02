@@ -22,6 +22,7 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 package it.unimi.di.prog2.e15;
 
 import java.util.Scanner;
+import java.util.Iterator;
 
 /** A class to test {@link StringIterators}. */
 public class StringIteratorsClient {

@@ -54,7 +54,7 @@ public class StringIterators {
 
       @Override
       public String next() {
-        if(next!=null) return next;
+        return next;
       }
     };
   }
