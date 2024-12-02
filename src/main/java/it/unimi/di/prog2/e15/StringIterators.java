@@ -38,11 +38,15 @@ public class StringIterators {
   public static Iterator<String> evenIterator(final Iterator<String> it) {
     return new Iterator<>() {
 
-      // EXERCISE: complete the implementation
-
       @Override
       public boolean hasNext() {
-        throw new UnsupportedOperationException("Unimplemented method 'hasNext'");
+        while(it.hasNext()) {
+          if(it.next().length()%2==0) {
+            next = it.next();
+            if(next!=null) return true;
+          }
+          return false;
+        }
       }
 
       @Override
