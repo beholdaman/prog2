@@ -68,16 +68,14 @@ public class StringIterators {
   public static Iterator<String> uppercase(final Iterator<String> it) {
     return new Iterator<>() {
 
-      // EXERCISE: complete the implementation
-
       @Override
       public boolean hasNext() {
-        throw new UnsupportedOperationException("Unimplemented method 'hasNext'");
+        return it.hasNext();
       }
 
       @Override
       public String next() {
-        throw new UnsupportedOperationException("Unimplemented method 'next'");
+
       }
     };
   }
