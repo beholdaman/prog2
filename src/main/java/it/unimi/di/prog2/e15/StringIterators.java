@@ -38,7 +38,7 @@ public class StringIterators {
   public static Iterator<String> evenIterator(final Iterator<String> it) {
     return new Iterator<>() {
 
-      private next = null;
+      private String next = null;
 
       @Override
       public boolean hasNext() {
