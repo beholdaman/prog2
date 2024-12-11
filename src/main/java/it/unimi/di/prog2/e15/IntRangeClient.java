@@ -21,8 +21,60 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e15;
 
+import java.util.Scanner;
+import java.util.Iterator;
+
 /** A class to test int ranges. */
 public class IntRangeClient {
+
+    public static class IntRange implements Iterable<Integer> {
+
+    /*
+    * AF: dato un {@code inizio}, una {@code fine} e un {@code passo} interi, 
+    *     la serie e' costituita da ogni {@code passo} interi da {@code inizio} a {@code fine}
+    * 
+    * 
+    *
+    *
+    */
+
+    private int inizio;
+    private int fine;
+    private int passo;
+    private int prossimo;
+
+    /** 
+    *  Costruisce una serie che va da {@code inizio} a {@code fine} con passo {@passo}
+    * 
+    */
+    public IntRange(int inizio, int fine, int passo) {
+        this.inizio = inizio;
+        this.fine = fine;
+        this.passo = passo;
+        prossimo = inizio;
+    }
+
+    
+    public Iterator<Integer> iterator() {
+        return new Iterator<Integer>() {
+
+            @Override
+            public boolean hasNext() {
+              if(passo>0) return prossimo <= fine;
+              if(passo<0) return prossimo >= fine;
+              return false;
+            }
+
+            @Override
+            public Integer next() {
+              int to_return = prossimo;
+              prossimo = prossimo + passo;
+              return to_return;
+            }
+        };
+    }
+   
+}
 
   /** . */
   private IntRangeClient() {}
@@ -52,23 +104,32 @@ public class IntRangeClient {
    * @param args not used.
    */
 
-  /*- Uncomment and complete once you have implemented the range class
+
+
+  // Uncomment and complete once you have implemented the range class
 
     public static void main(String[] args) {
-      // declare the range...
+
+      IntRange range;
+
+      //valori di default
+      int from = Integer.MIN_VALUE;
+      int to = Integer.MAX_VALUE;
+      int step = 1;
+
       try (Scanner sc = new Scanner(System.in)) {
         while (sc.hasNext()) {
           char command = sc.next().charAt(0);
           int value = sc.nextInt();
           switch (command) {
             case 'F':
-              // set the from the range
+              from = value;
               break;
             case 'T':
-              // set the to the range
+              to = value;
               break;
             case 'S':
-              // set the step the range
+              step = value;
               break;
             default:
               throw new IllegalArgumentException("Unknown command: " + command);
@@ -76,10 +137,19 @@ public class IntRangeClient {
         }
       }
       int iterations = 0, first = 0, last = 0;
-      // complete...
+
+      range = new IntRange(from,to,step);
+      Iterator<Integer> it = range.iterator();
+
+      while(it.hasNext()) {
+        last = it.next();
+        System.out.println(last);
+        iterations++;
+      }
+
+      first = from;
+
       System.out.println(
           iterations + (iterations > 0 ? " " + first : "") + (iterations > 1 ? " " + last : ""));
     }
-
-  */
 }
