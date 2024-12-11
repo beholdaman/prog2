@@ -60,8 +60,8 @@ public class IntRangeClient {
 
             @Override
             public boolean hasNext() {
-              if(passo>0) return prossimo <= fine;
-              if(passo<0) return prossimo >= fine;
+              if(passo>0) return prossimo < fine;
+              if(passo<0) return prossimo > fine;
               return false;
             }
 
@@ -143,7 +143,6 @@ public class IntRangeClient {
 
       while(it.hasNext()) {
         last = it.next();
-        System.out.println(last);
         iterations++;
       }
 
